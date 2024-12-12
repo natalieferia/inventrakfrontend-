@@ -1,0 +1,10 @@
+<div class="sidebar tl-min-h-screen">
+  <img alt="INVENTRAK Logo" class="tl-w-[100px] tl-mb-4" src="/Logo.png">
+  <ul class="menu">
+    <li *ngFor="let menu of oMenus" [class]="isSameRoute(menu.path) ? 'activate' : ''" >
+      <a (click)="irA(menu.path)" >
+        {{menu.text}}
+      </a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,37 @@
+<div class="tl-flex tl-m-0 tl-bg-[#ececec]">
+  <app-authenticated-navbar></app-authenticated-navbar>
+
+  <div class="tl-m-[20px] tl-grow">
+    <div class="tl-bg-[#000000] tl-text-[#ffffff] tl-p-[10px] tl-text-center tl-mb-[20px]">
+      <h1 class="tl-m-0 tl-text-2xl">Mis Recordatorios</h1>
+    </div>
+
+    <div class="tl-flex tl-justify-end tl-mb-4">
+      <button type="button" class="btn btn-success" (click)="openUpsertSaveModal()">Agregar</button>
+    </div>
+
+    <div class="tl-flex tl-flex-wrap tl-overflow-y-auto height-options">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let oRow of oRows">
+            <th scope="row">{{oRow.nombre}}</th>
+            <td>{{oRow.descripcion}}</td>
+            <td>
+              <div class="tl-flex tl-justify-around">
+                <fa-icon [icon]="faPenToSquare" class="fa-xl me-4 tl-cursor-pointer" (click)="onOpenUpsertUpdateModal(oRow.id)"></fa-icon>
+                <fa-icon [icon]="faTrashCan" class="fa-xl tl-cursor-pointer" (click)="onEliminar(oRow.id)"></fa-icon>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

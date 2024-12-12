@@ -1,0 +1,29 @@
+<div class="tl-flex tl-m-0 tl-bg-[#ececec]">
+  <app-authenticated-navbar></app-authenticated-navbar>
+
+  <div class="tl-m-[20px] tl-grow">
+    <div class="tl-bg-[#000000] tl-text-[#ffffff] tl-p-[10px] tl-text-center tl-mb-[20px]">
+      <h1 class="tl-m-0 tl-text-2xl">Mi Configuración</h1>
+    </div>
+
+    <div class="tl-flex tl-w-full tl-justify-center">
+      <form class="tl-w-2/5" (ngSubmit)="onChangePassword()" [formGroup]="oUpserPasswordForm">
+        <h3 class="tl-text-center tl-mb-2 tl-text-2xl">Cambiar Contraseña</h3>
+
+        <div class="tl-mb-3">
+          <label for="password" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" id="password" aria-describedby="emailHelp" formControlName="password">
+        </div>
+
+        <div class="tl-mb-3">
+          <label for="rePassword" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" id="rePassword" aria-describedby="emailHelp" formControlName="repassword">
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+          Cambiar
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

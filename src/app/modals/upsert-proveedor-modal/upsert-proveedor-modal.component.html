@@ -1,0 +1,33 @@
+<div class="tl-p-4">
+  <form (ngSubmit)="onUpsert()" [formGroup]="oUpserProveedorForm">
+    <h3 class="tl-text-center tl-mb-2 tl-text-2xl">{{data.isUpdate ? 'Actualizar un Proveedor' : 'Agregar un Proveedor'}}</h3>
+
+    <div class="tl-mb-3">
+      <label for="proveedorName" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="proveedorName" aria-describedby="emailHelp" formControlName="nombre">
+    </div>
+
+    <div class="tl-mb-3">
+      <label for="proveedorDireccion" class="form-label">Direccion</label>
+      <input type="text" class="form-control" id="proveedorDireccion" aria-describedby="emailHelp" formControlName="dirreccion">
+    </div>
+
+    <div class="tl-mb-3">
+      <label for="proveedorTelefono" class="form-label">Telefono</label>
+      <input type="number" class="form-control" id="proveedorTelefono" aria-describedby="emailHelp" formControlName="telefono">
+    </div>
+
+    <div class="tl-mb-3">
+      <label for="proveedorCorreo" class="form-label">Correo</label>
+      <input type="email" class="form-control" id="proveedorCorreo" aria-describedby="emailHelp" formControlName="correo">
+    </div>
+
+    <div class="tl-mb-3">
+      <label for="proveedorPersonaContacto" class="form-label">Persona Contacto</label>
+      <input type="text" class="form-control" id="proveedorPersonaContacto" aria-describedby="emailHelp" formControlName="personaContacto">
+    </div>
+
+    <button type="submit" class="btn btn-primary">{{data.isUpdate ? 'Actualizar' : 'Guardar'}}</button>
+  </form>
+
+</div>

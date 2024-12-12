@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+@layer base {
+  /*:root {
+
+  }*/
+
+  html, body {
+    height: 100%!important;
+   }
+
+  body {
+    margin: 0!important;
+    padding: 0!important;
+    background-color: #ececec!important;
+    font-family: Roboto, "Helvetica Neue", sans-serif!important;
+  }
+}

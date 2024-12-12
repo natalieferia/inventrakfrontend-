@@ -1,0 +1,44 @@
+<div class="tl-flex tl-m-0 tl-bg-[#ececec]">
+  <app-authenticated-navbar></app-authenticated-navbar>
+
+  <div class="tl-m-[20px] tl-grow">
+    <div class="tl-bg-[#000000] tl-text-[#ffffff] tl-p-[10px] tl-text-center tl-mb-[20px]">
+      <h1 class="tl-m-0 tl-text-2xl">Mis Averias</h1>
+    </div>
+
+    <div class="tl-flex tl-flex-wrap tl-overflow-y-auto height-options">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Código</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Precio Entrada</th>
+            <th scope="col">Precio Salida</th>
+            <th scope="col">Fecha Caducidad</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Imagen</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Inventario</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let oRow of oRows">
+            <th scope="row">{{oRow.nombre}}</th>
+            <td>{{oRow.codigo}}</td>
+            <td>{{oRow.cantidad}}</td>
+            <td>{{formatCurrency(oRow.precio_entrada)}}</td>
+            <td>{{formatCurrency(oRow.precio_salida)}}</td>
+            <td>{{formatDate(oRow.fecha_caducidad)}}</td>
+            <td>{{oRow.descripcion}}</td>
+            <td>
+              <img [src]="oRow.imagen" class="img-thumbnail" [alt]="'Imagen ' + oRow.nombre">
+            </td>
+            <td>{{oRow.stock == 1 ? "Si" : "No"}}</td>
+            <td>{{oRow.inventario}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

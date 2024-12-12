@@ -1,0 +1,42 @@
+<div class="tl-flex tl-m-0 tl-bg-[#ececec]">
+  <app-authenticated-navbar></app-authenticated-navbar>
+
+  <div class="tl-m-[20px] tl-grow">
+    <div class="tl-bg-[#000000] tl-text-[#ffffff] tl-p-[10px] tl-text-center tl-mb-[20px]">
+      <h1 class="tl-m-0 tl-text-2xl">Mi Control de Calidad</h1>
+    </div>
+
+    <div class="tl-flex tl-flex-wrap tl-overflow-y-auto height-options">
+      <div class="tl-flex tl-flex-wrap tl-overflow-y-auto height-options">
+        <div *ngFor="let oRow of oRows">
+          <div class="tl-mr-8 tl-mb-4 tl-max-w-44 tl-min-h-48 tl-bg-white tl-rounded-[10px] tl-shadow-[0_0_10px_rgba(0,0,0,0.1)] tl-text-left tl-p-[10px] tl-transition tl-transform tl-duration-300 tl-ease">
+            <div class="tl-mb-2">
+              <img [src]="oRow.imagen" class="img-thumbnail" [alt]="'Imagen ' + oRow.nombre">
+            </div>
+            <p class="tl-font-bold">Nombre:</p>
+            <p class="tl-text-gray-500 tl-break-words tl-text-wrap tl-ml-2">{{oRow.nombre}}</p>
+            <p class="tl-font-bold">Codigo:</p>
+            <p class="tl-text-gray-500 tl-break-words tl-text-wrap tl-ml-2">{{oRow.codigo}}</p>
+            <p class="tl-font-bold">Cantidad:</p>
+            <p class="tl-text-gray-500 tl-break-words tl-text-wrap tl-ml-2">{{oRow.cantidad}}</p>
+            <p class="tl-font-bold">Precio Entrada:</p>
+            <p class="tl-text-gray-500 tl-break-words tl-text-wrap tl-ml-2">{{formatCurrency(oRow.precio_entrada)}}</p>
+            <p class="tl-font-bold">Precio Salida:</p>
+            <p class="tl-text-gray-500 tl-break-words tl-text-wrap tl-ml-2">{{formatCurrency(oRow.precio_salida)}}</p>
+            <p class="tl-font-bold">Fecha Vencimiento:</p>
+            <p class="tl-text-gray-500 tl-break-words tl-text-wrap tl-ml-2">{{formatDate(oRow.fecha_caducidad)}}</p>
+            <p class="tl-font-bold">Nota:</p>
+            <p class="tl-text-gray-500 tl-break-words tl-text-wrap tl-ml-2">
+              Este producto cuenta con uno o mas vencimientos
+            </p>
+
+            <div class="tl-flex tl-mt-3 tl-justify-around">
+              <!--<fa-icon [icon]="faPenToSquare" class="fa-xl me-4 tl-cursor-pointer" (click)="onOpenUpsertUpdateModal(oRow.id)"></fa-icon>
+              <fa-icon [icon]="faTrashCan" class="fa-xl tl-cursor-pointer" (click)="onEliminar(oRow.id)"></fa-icon>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

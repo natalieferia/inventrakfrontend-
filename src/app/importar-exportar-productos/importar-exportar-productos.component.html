@@ -1,0 +1,31 @@
+<div class="body">
+  <app-authenticated-navbar></app-authenticated-navbar>
+
+  <div class="main-content">
+    <div class="profile-header">
+      <h1>Importar/Exportar Excel</h1>
+    </div>
+
+    <div class="section">
+      <div class="item" (click)="descargarPlantilla()">
+        <div class="icon">
+          <fa-icon [icon]="faDownload"></fa-icon>
+        </div>
+        <p>Exportar Productos</p>
+      </div>
+      <div class="item" (click)="triggerFileInput()">
+        <div class="icon">
+          <fa-icon [icon]="faUpload"></fa-icon>
+        </div>
+        <p>Importar Productos</p>
+      </div>
+    </div>
+  </div>
+
+  <input
+    type="file"
+    #fileInput
+    style="display: none;"
+    (change)="onFileSelected($event)"
+  />
+</div>

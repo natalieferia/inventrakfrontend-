@@ -1,0 +1,46 @@
+<div class="body">
+  <app-authenticated-navbar></app-authenticated-navbar>
+
+  <div class="main-content">
+    <div class="profile-header">
+      <h1>Inventario {{nombreInventario}}</h1>
+    </div>
+
+    <div class="w-max-size">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Código</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Precio Entrada</th>
+            <th scope="col">Precio Salida</th>
+            <th scope="col">Fecha Caducidad</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Imagen</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Vender</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let oRow of productos">
+            <th scope="row">{{oRow.nombre}}</th>
+            <td>{{oRow.codigo}}</td>
+            <td>{{oRow.cantidad}}</td>
+            <td>{{formatCurrency(oRow.precio_entrada)}}</td>
+            <td>{{formatCurrency(oRow.precio_salida)}}</td>
+            <td>{{formatDate(oRow.fecha_caducidad)}}</td>
+            <td>{{oRow.descripcion}}</td>
+            <td>
+              <img [src]="oRow.imagen" class="img-thumbnail" [alt]="'Imagen ' + oRow.nombre">
+            </td>
+            <td>{{oRow.stock == 1 ? "Si" : "No"}}</td>
+            <td>
+              <button type="button" class="btn btn-success" (click)="onVender(oRow.id)">Agregar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

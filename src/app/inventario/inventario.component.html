@@ -1,0 +1,31 @@
+<div class="body">
+  <app-authenticated-navbar></app-authenticated-navbar>
+
+  <div class="main-content">
+    <div class="profile-header">
+      <h1>Mis Inventarios</h1>
+    </div>
+
+    <div class="inventory-section">
+      <div *ngFor="let value of oInventarios">
+        <div class="inventory-item">
+          <div class="tl-my-3">
+            <fa-icon [icon]="faEye" class="fa-xl cursor-pointer" (click)="onDetail(value.id)"></fa-icon>
+          </div>
+          <p>{{ value['nombre'] }}</p>
+          <div class="mt-3">
+            <fa-icon [icon]="faPenToSquare" class="fa-xl me-4 cursor-pointer" (click)="openUpsertUpdateModal(value.id)"></fa-icon>
+            <fa-icon [icon]="faTrashCan" class="fa-xl cursor-pointer" (click)="eliminarInventario(value.id)"></fa-icon>
+          </div>
+        </div>
+      </div>
+
+      <div class="add-inventory" style="display: flex;justify-content: center;align-items: center;" (click)="openUpsertSaveModal()">
+        <div class="add-icon">
+          <fa-icon [icon]="faPlus"></fa-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

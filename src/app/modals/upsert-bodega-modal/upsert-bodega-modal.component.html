@@ -1,0 +1,38 @@
+<div class="tl-p-4">
+  <form (ngSubmit)="onUpsert()" [formGroup]="oUpserBodegaForm">
+    <h3 class="tl-text-center tl-mb-2 tl-text-2xl">{{data.isUpdate ? 'Actualizar una Bodega' : 'Agregar una Bodega'}}</h3>
+
+    <div class="tl-mb-3">
+      <label for="bodegaName" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="bodegaName" aria-describedby="emailHelp" formControlName="nombre">
+    </div>
+
+    <div class="tl-mb-3">
+      <label for="bodegaDireccion" class="form-label">Direccion</label>
+      <input type="text" class="form-control" id="bodegaDireccion" aria-describedby="emailHelp" formControlName="dirreccion">
+    </div>
+
+    <div class="tl-mb-3">
+      <label for="bodegaTelefono" class="form-label">Telefono</label>
+      <input type="number" class="form-control" id="bodegaTelefono" aria-describedby="emailHelp" formControlName="telefono">
+    </div>
+
+    <div class="tl-mb-3">
+      <label for="bodegaCorreo" class="form-label">Correo</label>
+      <input type="email" class="form-control" id="bodegaCorreo" aria-describedby="emailHelp" formControlName="correo">
+    </div>
+
+    <div class="tl-mb-3">
+      <label for="bodegaGerente" class="form-label">Gerente</label>
+      <input type="text" class="form-control" id="bodegaGerente" aria-describedby="emailHelp" formControlName="gerente">
+    </div>
+
+    <div class="tl-mb-3">
+      <label for="bodegaCapacidadAlmacenamiento" class="form-label">Capacidad Almacenamiento M3</label>
+      <input type="number" class="form-control" id="bodegaCapacidadAlmacenamiento" aria-describedby="emailHelp" formControlName="capacidadAlmacenamiento">
+    </div>
+
+    <button type="submit" class="btn btn-primary">{{data.isUpdate ? 'Actualizar' : 'Guardar'}}</button>
+  </form>
+
+</div>

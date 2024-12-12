@@ -1,0 +1,27 @@
+<nav>
+  <img alt="INVENTRAK Logo" class="logo" src="/Logo.png">
+  <ul>
+    <li><a href="#">Descargar app</a></li>
+    <li><a href="#">Centro de ayuda</a></li>
+    <li><a href="/inventrak/registrate">Crear cuenta</a></li>
+    <li><a href="#">Contáctenos</a></li>
+  </ul>
+</nav>
+
+<div class="formulario">
+  <h1>Iniciar Sesión</h1>
+  <form (ngSubmit)="onLogin()" [formGroup]="loginForm">
+    <div class="campo correo">
+      <input formControlName="email" id="email" placeholder=" " required type="email">
+      <label for="email">Correo Electrónico</label>
+    </div>
+    <div class="campo contraseña">
+      <input formControlName="password" id="password" placeholder=" " required type="password">
+      <label for="password">Contraseña</label>
+    </div>
+    <button type="submit">
+      Iniciar Sesión
+    </button>
+  </form>
+  <p class="recordar">Recordar mis datos</p>
+</div>

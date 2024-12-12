@@ -1,0 +1,90 @@
+.body {
+  background-color: #ececec;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  display: flex;
+}
+
+.logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.menu li {
+  margin-bottom: 10px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #222602;
+  font-weight: 500;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.menu a:hover {
+  background-color: #ccd870;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.profile-header {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.inventory-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.inventory-item, .add-inventory {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inventory-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.document-icon, .add-icon {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.inventory-item p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #222602;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

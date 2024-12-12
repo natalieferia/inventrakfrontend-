@@ -1,0 +1,18 @@
+<div class="tl-p-4">
+  <form (ngSubmit)="onUpsert()" [formGroup]="oUpserRecordatorioForm">
+    <h3 class="tl-text-center tl-mb-2 tl-text-2xl">{{data.isUpdate ? 'Actualizar un Recordatorio' : 'Agregar un Recordatorio'}}</h3>
+
+    <div class="tl-mb-3">
+      <label for="recordatorioName" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="recordatorioName" aria-describedby="emailHelp" formControlName="nombre">
+    </div>
+
+    <div class="tl-mb-3">
+      <label for="recordatorioDescripcion" class="form-label">Descripcion</label>
+      <input type="text" class="form-control" id="recordatorioDescripcion" aria-describedby="emailHelp" formControlName="descripcion">
+    </div>
+
+    <button type="submit" class="btn btn-primary">{{data.isUpdate ? 'Actualizar' : 'Guardar'}}</button>
+  </form>
+
+</div>
